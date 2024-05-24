@@ -9,5 +9,15 @@ submitBtn.addEventListener("click", function() {
         inputSection.style.border = "0.3rem solid hsl(0, 93%, 68%)";
         iconError.style.display = "block";
         errorBox.innerHTML = "<p id='error-text' class='pink-color'>Please provide a valid email</p>";
+    } else {
+        iconError.style.display = "none";
+        inputSection.style.border = "1px solid hsla(0, 6%, 24%, 0.5)";
+        errorBox.innerHTML = "<p id='error-text' class='pink-color'>Your email was submitted</p>";
+    }
+})
+
+inputSection.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+        submitBtn.click();
     }
 })
